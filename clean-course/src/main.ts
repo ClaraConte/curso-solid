@@ -1,6 +1,6 @@
 import './style.css'
-import './clean-code/tarea-07'
-
+//import './clean-code/tarea-07'
+import './solid/01-srp'
 const app = document.querySelector<HTMLDivElement>('#app')!
 
 app.innerHTML = `

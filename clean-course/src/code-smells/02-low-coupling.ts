@@ -1,7 +1,7 @@
 (()=>{
     // Aplicando el principio de responsabilidad única
     // Prioriza la composición frente a la herencia
-    
+
     // Bajo acoplamiento
 
     type Gender = 'M'|'F';
