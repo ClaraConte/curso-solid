@@ -19,7 +19,7 @@
         private masterEmail: string = 'clara@clara.com';
 
         sendEmail(emailList : string[], template:'to-clients'|'to-admins') {
-            console.log('Enviando correo a los '+ template);
+            console.log('Enviando correo a los '+ template + emailList[0]);
         }
     }
 
