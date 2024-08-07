@@ -1,6 +1,6 @@
-import { LocalDataBaseService } from "./05-dependency-c";
+import {JsonDataBaseService, LocalDataBaseService, PostProvider} from "./05-dependency-c";
 
-interface Post {
+export interface Post {
     body:   string;
     id:     number;
     title:  string;
@@ -12,12 +12,20 @@ export class PostService {
 
     private posts: Post[] = [];
 
-    constructor() {}
+    // Aplicando el principio dependency inversion DIP
+    // Inyección de dependecia
+    constructor( private postProvider: PostProvider ) {}
 
-    async getPosts() {
+    /*  async getPosts() {
         const jsonDB = new LocalDataBaseService();
         this.posts = await jsonDB.getFakePosts();
 
+        return this.posts;
+    }*/
+
+    async getPosts() {
+        //const jsonDB = new LocalDataBaseService();
+        this.posts = await this.postProvider.getPost();
         return this.posts;
     }
 }
