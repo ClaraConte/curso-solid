@@ -1,4 +1,4 @@
-// Aplicanco SIP principio de segregación de interfaz
+// Aplicanco SIP principio de segregación de interfaz (ligado al P Liskov)
 // Se refiere a que no exista una clase que implemente métodos de una interfaz, que luego no deba utilizar.
 interface  Bird {
      eat(): void ;
