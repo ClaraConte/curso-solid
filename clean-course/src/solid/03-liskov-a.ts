@@ -1,9 +1,10 @@
-import { Tesla, Audi, Toyota, Honda } from './03-liskov-b';
-
+import {Tesla, Audi, Toyota, Honda, Vehicle} from './03-liskov-b';
+// Principo de sustitución de liskov
+//
 
 (() => {
 
-    const printCarSeats = ( cars: (Tesla | Audi | Toyota | Honda)[] ) => {
+    /*const printCarSeats = ( cars: (Tesla | Audi | Toyota | Honda)[] ) => {
 
         for (const car of cars) {
 
@@ -25,6 +26,16 @@ import { Tesla, Audi, Toyota, Honda } from './03-liskov-b';
             }
 
         }
+    }*/
+
+    // Implementado SLP (sustitución de liskov) y OPP (open/close)
+
+    const printCarSeats = ( cars: Vehicle[] ) => {
+        cars.forEach( car => {
+            console.log(car.constructor.name, car.getNumberOfSeats() )
+            }
+        )
+
     }
 
     const cars = [
