@@ -12,8 +12,8 @@ export class TodoService {
 
     async getTodoItems() {
 
-        const {data} = await this.http.get('https://jsonplaceholder.typicode.com/todos/');
-        return data;
+        const {data, status} = await this.http.get('https://jsonplaceholder.typicode.com/todos/');
+        return {data, status};
     }
 }
 
@@ -24,8 +24,8 @@ export class PostService {
     }
 
     async getPosts() {
-        const {data} = await this.http.get('https://jsonplaceholder.typicode.com/posts');
-        return data;
+        const {data, status} = await this.http.get('https://jsonplaceholder.typicode.com/posts');
+        return  {data, status};
     }
 }
 
@@ -36,8 +36,8 @@ export class PhotosService {
     }
 
     async getPhotos() {
-        const {data} = await this.http.get('https://jsonplaceholder.typicode.com/photos');
-        return data;
+        const {data, status} = await this.http.get('https://jsonplaceholder.typicode.com/photos');
+        return  {data, status};
     }
 
 }
